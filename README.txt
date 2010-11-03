@@ -45,8 +45,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Compilation dependencies
 ========================
 This project depends on the Opera Link client library found here.
-Instructions for building this project are below.
-http://github.com/operasoftware/androidoperalink
+http://github.com/operasoftware/JavaOperaLinkClient
 
 Instructions
 ============
@@ -57,10 +56,6 @@ A quick-start guide for Ubuntu would be:
 $> sudo apt-get install sun-java6-jre
 $> sudo apt-get install maven
 $> sudo apt-get install tomcat6
-$> sudo update-alternatives --config java 
-(choose the sun jre that you just installed)
-$> sudo update-alternatives javac
-(choose the sun jre that you just installed)
 
 Grab the source code for this example
 
@@ -86,7 +81,8 @@ on. In this case, the local machine.
 opera.callbackUrl: http://127.0.0.1/Link/LinkServlet/
 
 Alternativley, go to https://auth.opera.com/service/oauth and register
-your own application and use your own key and secret.
+your own application and use your own key and secret and callback url
+of your liking.
 
 Build the web application
 $> cd ~/JavaOperaLink
