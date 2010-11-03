@@ -1,0 +1,46 @@
+# simple styles to lay out list in 3 several columns
+html,body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 100%;
+	font-family: verdana, sans-serif;
+	background: #fff;
+}
+
+a {
+	display: block;
+	position: relative;
+	color: #000;
+	margin: auto;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #ddd;
+}
+
+ol {
+	width: 100%;
+}
+
+li {
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+}
+
+.logo {
+	width: 96px;
+	height: 96px;
+	border: none;
+}
+
+.thumb {
+	width: 96px;
+	height: 96px;
+	border: none;
+}

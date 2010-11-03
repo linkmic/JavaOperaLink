@@ -1,0 +1,7 @@
+*.class
+*.war
+*.jar
+target/
+src/main/java/com/opera/link/apilib/android/
+.classpath
+.project
