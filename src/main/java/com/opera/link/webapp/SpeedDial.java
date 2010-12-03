@@ -13,10 +13,11 @@ public class SpeedDial implements Serializable {
 		// empty constructor
 	}
 	
-	public SpeedDial(String title, String uri, byte[] thumbnail) {
+	public SpeedDial(String title, String uri, byte[] thumbnail, int id) {
 		this.title =title;
 		this.uri = uri;
 		this.thumbnail = thumbnail;
+		this.id = id;
 	}
 	
 	public String getTitle() {
@@ -27,6 +28,13 @@ public class SpeedDial implements Serializable {
 	}
 	public String getUri() {
 		return uri;
+	}
+	public int getId(){
+		return id;
+	}
+	
+	public void setPosition(int id){
+		this.id = id;
 	}
 	public void setUri(String uri) {
 		this.uri = uri;
@@ -41,4 +49,5 @@ public class SpeedDial implements Serializable {
 	private String title;
 	private String uri;
 	private byte[] thumbnail;
+	private int id;
 }

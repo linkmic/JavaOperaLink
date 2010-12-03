@@ -204,7 +204,7 @@ public class LinkServlet extends HttpServlet {
 			ArrayList<com.opera.link.webapp.SpeedDial> serializableSd = new ArrayList<com.opera.link.webapp.SpeedDial>();
 			for (com.opera.link.apilib.items.SpeedDial sditem : sd)
 				serializableSd.add(new com.opera.link.webapp.SpeedDial(
-						sditem.title, sditem.uri, sditem.thumbnail));
+						sditem.title, sditem.uri, sditem.thumbnail, Integer.valueOf(sditem.getId())));
 
 			model.setSpeeddials(serializableSd);
 			request.getSession().setAttribute(LinkModel.MODEL, model);

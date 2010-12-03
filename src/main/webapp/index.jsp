@@ -4,6 +4,8 @@
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Iterator"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Comparator"%>
 <%@page import="com.opera.link.webapp.LinkModel"%>
 <%@page import="com.opera.link.webapp.SpeedDial"%>
 <%@page import="com.opera.link.webapp.LinkServlet"%>
@@ -47,8 +49,19 @@ out.println("<a href=\"" + LinkServlet.AUTH_SERVLET_UPDATE + "\">[Update]</a>");
 			return;
 		}
 		
-		// iterate and output speeddial data in the order we happened to
-		// receive it
+		// sort the speedials
+		final Comparator<SpeedDial> SD_ORDER =
+                                 new Comparator<SpeedDial>() {
+        	
+			public int compare(SpeedDial s1, SpeedDial s2) {
+        		return (s1.getId() < s2.getId() ? -1 :
+                    (s1.getId() == s2.getId() ? 0 : 1));
+        	}
+		};
+		
+		Collections.sort(speeddials, SD_ORDER);
+		
+		// print the speeddial data
 		Iterator<SpeedDial> it = speeddials.iterator();
 		while (it.hasNext()) {
 			SpeedDial sd = (SpeedDial) it.next();
@@ -57,7 +70,7 @@ out.println("<a href=\"" + LinkServlet.AUTH_SERVLET_UPDATE + "\">[Update]</a>");
 				out.println("<img class=\"logo\" " + 
 				"src=\"http://media.opera.com/media/images/icon/opera_icon.svgz\" />");	
 			out.println("<div>");
-			out.println(sd.getTitle());
+			out.println(sd.getId() + " " + sd.getTitle());
 			out.println("</div>");
 			out.println("</a>");
 			out.println("</li>");
